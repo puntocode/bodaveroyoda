@@ -1,0 +1,35 @@
+#cabecera{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("../images/portada.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+    background-attachment: fixed;
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        height: 500px;
+        max-width: 80%;
+        text-align: center;
+    }
+}
+
+#fiesta{
+    width: 100%;
+    background-image: url("../images/fiesta.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+    background-attachment: fixed;
+}
+
+.bg-gray{background-color: $gray;}
+.bg-pink{background-color: $pink;}
+.text-pink{color: $pink}
+.btn{border-radius: 20px;}
+.btn-white{background-color: #fff;}
