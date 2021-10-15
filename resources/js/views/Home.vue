@@ -21,7 +21,7 @@
                     <div class="col-12">
                         <img src="/images/icons/icon-anillos.svg" alt="icono de iglesia" width="100">
                         <h2>Ceremonia y Fiesta</h2>
-                        <p>La ceremonia se realizará el 15 de Enero a las 19:00 horas en Dir: xxxxx N° 00 (San Bernardino), continuando con la fiesta.</p>
+                        <p>La ceremonia se realizará el 15 de Enero a las 19:00 horas en Dir: xxxxxx N° 00 (San Bernardino), continuando con la fiesta.</p>
                         <a href="" class="btn btn-success px-4">LLEGAR A LA CEREMONIA</a>
                         <small class="d-block mt-3 text-secondary">Tocá el botón de abajo para recibir las indicaciones para llegar.</small>
                     </div>
