@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-12 text-center text-white">
                         <h3>Faltan</h3>
-                        <h3>100 días 1Hs 55mm</h3>
+                        <Contador :year="2022" :month="2" :day="14" :hour="19" :minute="30" />
                     </div>
                 </div>
             </div>
@@ -18,18 +18,12 @@
         <section>
             <div class="container py-5">
                 <div class="row text-center py-5">
-                    <div class="col-lg-6">
-                        <img src="/images/icons/icon-iglesia.svg" alt="icono de iglesia" width="80">
-                        <h2>Ceremonia</h2>
-                        <p>La ceremonia se realizará el 15 de Enero a las 19:00 horas en la Parroquia Ntra. Sra. del Carmen, Tigre. Tocá el botón de abajo para recibir las indicaciones para llegar.</p>
+                    <div class="col-12">
+                        <img src="/images/icons/icon-anillos.svg" alt="icono de iglesia" width="100">
+                        <h2>Ceremonia y Fiesta</h2>
+                        <p>La ceremonia se realizará el 15 de Enero a las 19:00 horas en Dir: xxxxx N° 00 (San Bernardino), continuando con la fiesta.</p>
                         <a href="" class="btn btn-success px-4">LLEGAR A LA CEREMONIA</a>
-                    </div>
-
-                    <div class="col-lg-6 mt-5 mt-lg-0">
-                        <img src="/images/icons/icon-fiesta.svg" alt="icono de iglesia" width="80">
-                        <h2>FIESTA</h2>
-                        <p>Después de la ceremonia festejaremos en Astilleros Milberg, Nordelta. Tocá el botón de abajo y encontrá las indicaciones para llegar, te esperamos .</p>
-                        <a href="" class="btn btn-success px-4">LLEGAR A LA FIESTA</a>
+                        <small class="d-block mt-3 text-secondary">Tocá el botón de abajo para recibir las indicaciones para llegar.</small>
                     </div>
                 </div>
             </div>
@@ -38,7 +32,7 @@
         <section class="bg-gray">
             <div class="container py-5">
                 <div class="row">
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center my-4">
                         <h2 class="text-success">CONFIRMAR ASISTENCIA</h2>
                         <p>Esperamos que sas parte de esta gran celebración. ¡Confirmanos tu asistencia!</p>
                         <a href="" class="btn btn-success px-4">CONFIRMAR ASISTENCIA</a>
@@ -77,7 +71,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <img src="/images/icons/icon-instagram.svg" alt="icono de regalo" width="58">
-                        <h2 class="mt-4">#BODAVEROYOSVAL</h2>
+                        <h2 class="mt-4">#BODAVEROYODA</h2>
                         <p class="m-0">¡Preparate para nuestro gran día!</p>
                         <p>Ya podés etiquetarnos en Instagram con nuestro hashtag en tus fotos o videos.</p>
                         <a href="" class="text-success">Ver fotos en instagram</a>
@@ -101,8 +95,10 @@
 </template>
 
 <script>
-    export default {
+    import Contador from '../components/Contador';
 
+    export default {
+        components: { Contador },
     }
 </script>
 
