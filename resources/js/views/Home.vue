@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-12 text-center text-white">
                         <h3>Faltan</h3>
-                        <Contador :year="2022" :month="2" :day="14" :hour="19" :minute="30" />
+                        <Contador :year="2022" :month="2" :day="26" :hour="19" :minute="0" />
                     </div>
                 </div>
             </div>
@@ -21,8 +21,8 @@
                     <div class="col-12">
                         <img src="/images/icons/icon-anillos.svg" alt="icono de iglesia" width="100">
                         <h2>Ceremonia y Fiesta</h2>
-                        <p>La ceremonia se realizará el 15 de Enero a las 19:00 horas en Dir: xxxxxx N° 00 (San Bernardino), continuando con la fiesta.</p>
-                        <a href="" class="btn btn-success px-4">LLEGAR A LA CEREMONIA</a>
+                        <p>La ceremonia se realizará el <strong>26 de Febrero a las 19:00 horas</strong> en Dir: Fernando de Magallanes (San Bernardino).</p>
+                        <a href="https://goo.gl/maps/bsvdvEVNqkQ3Gv6y6" class="btn btn-success px-4" target="_blank">LLEGAR A LA CEREMONIA</a>
                         <small class="d-block mt-3 text-secondary">Tocá el botón de abajo para recibir las indicaciones para llegar.</small>
                     </div>
                 </div>
@@ -34,21 +34,23 @@
                 <div class="row">
                     <div class="col-12 text-center my-4">
                         <h2 class="text-success">CONFIRMAR ASISTENCIA</h2>
-                        <p>Esperamos que sas parte de esta gran celebración. ¡Confirmanos tu asistencia!</p>
+                        <p>Esperamos que seas parte de esta gran celebración. ¡Confirmanos tu asistencia!</p>
                         <a href="" class="btn btn-success px-4">CONFIRMAR ASISTENCIA</a>
-                        <h4 class="mt-4 text-success">Dress Code: <span>Elegante</span></h4>
+                        <h4 class="mt-4 text-success">Dress Code: <span>Sport Elegante</span></h4>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="bg-success">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-12 text-center">
+            <div class="container py-4">
+                <div class="row py-5">
+                    <div class="col-12 text-center text-white">
                         <img src="/images/icons/icon-regalo.svg" alt="icono de regalo" width="60">
-                        <p class="text-white mt-4">Si deseas hacernos un regalo..</p>
-                        <a href="" class="btn btn-white text-success px-4 font-weight-bold">VER MÁS</a>
+                        <h2 class="mt-4">Nuestro mejor Regalo?</h2>
+                        <h3>Nuestra Luna de miel</h3>
+                        <p>Si desean colaborar pueden hacerlo en..</p>
+                        <button data-toggle="modal" data-target="#modal-regalo" class="btn btn-white text-success px-4 font-weight-bold">VER MÁS</button>
                     </div>
                 </div>
             </div>
@@ -74,7 +76,7 @@
                         <h2 class="mt-4">#BODAVEROYODA</h2>
                         <p class="m-0">¡Preparate para nuestro gran día!</p>
                         <p>Ya podés etiquetarnos en Instagram con nuestro hashtag en tus fotos o videos.</p>
-                        <a href="" class="text-success">Ver fotos en instagram</a>
+                        <a href="https://www.instagram.com/explore/tags/clubguarani" class="text-success" target="_blank">Ver fotos en instagram</a>
                     </div>
                 </div>
             </div>
@@ -90,18 +92,16 @@
             </div>
         </section>
 
+        <Modales />
 
     </div>
 </template>
 
 <script>
     import Contador from '../components/Contador';
+    import Modales from '../components/Modales';
 
     export default {
-        components: { Contador },
+        components: { Contador, Modales},
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
