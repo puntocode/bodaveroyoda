@@ -2195,6 +2195,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -38863,6 +38878,54 @@ var staticRenderFns = [
             ]
           )
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            id: "modal-canciones",
+            tabindex: "-1",
+            role: "dialog",
+            "aria-hidden": "true"
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "modal-dialog modal-dialog-centered",
+              attrs: { role: "document" }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c("h3", [_vm._v("Sugerir Cancion")]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: {
+                        type: "button",
+                        "data-dismiss": "modal",
+                        "aria-label": "Close"
+                      }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body text-center" })
+              ])
+            ]
+          )
+        ]
       )
     ])
   }
@@ -39076,9 +39139,17 @@ var staticRenderFns = [
               )
             ]),
             _vm._v(" "),
-            _c("a", { staticClass: "btn btn-success", attrs: { href: "" } }, [
-              _vm._v("Sugerir Canción")
-            ])
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": "#modal-canciones"
+                }
+              },
+              [_vm._v("Sugerir Canción")]
+            )
           ])
         ])
       ])

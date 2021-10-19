@@ -62,7 +62,7 @@
                     <div class="col-12 text-center">
                         <h2 class="text-success">¿QUÉ CANCIONES NO PUEDEN FALTAR?</h2>
                         <p>Ayudanos sugiriendo que canciones no pueden faltar en la fiesta.</p>
-                        <a href="" class="btn btn-success">Sugerir Canción</a>
+                        <button data-toggle="modal" data-target="#modal-canciones" class="btn btn-success">Sugerir Canción</button>
                     </div>
                 </div>
             </div>
