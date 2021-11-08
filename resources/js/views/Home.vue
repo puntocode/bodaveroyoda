@@ -21,7 +21,7 @@
                     <div class="col-12">
                         <img src="/images/icons/icon-anillos.svg" alt="icono de iglesia" width="100">
                         <h2>Ceremonia y Fiesta</h2>
-                        <p>La ceremonia se realizará el <strong>26 de Febrero a las 19:00 horas</strong> en Dir: Fernando de Magallanes (San Bernardino).</p>
+                        <p>La ceremonia se realizará el <strong>26 de Febrero a las 19:00 hs.</strong> en Fernando de Magallanes (San Bernardino).</p>
                         <a href="https://goo.gl/maps/bsvdvEVNqkQ3Gv6y6" class="btn btn-success px-4" target="_blank">LLEGAR A LA CEREMONIA</a>
                         <small class="d-block mt-3 text-secondary">Tocá el botón de abajo para recibir las indicaciones para llegar.</small>
                     </div>
@@ -35,8 +35,8 @@
                     <div class="col-12 text-center my-4">
                         <h2 class="text-success">CONFIRMAR ASISTENCIA</h2>
                         <p>Esperamos que seas parte de esta gran celebración. ¡Confirmanos tu asistencia!</p>
-                        <a href="" class="btn btn-success px-4">CONFIRMAR ASISTENCIA</a>
-                        <h4 class="mt-4 text-success">Dress Code: <span>Sport Elegante</span></h4>
+                        <button type="button" class="btn btn-success px-4" data-toggle="modal" data-target="#modal-asistencia">CONFIRMAR ASISTENCIA</button>
+                        <h4 class="mt-4"><span class="text-success">Dress Code:</span> Casual Chic</h4>
                     </div>
                 </div>
             </div>
@@ -68,15 +68,27 @@
             </div>
         </section>
 
+        <section>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="my-4">Nuestra Historia..</h2>
+                    </div>
+                </div>
+
+                <NosotrosAlbum />
+            </div>
+        </section>
+
         <section class="bg-gray">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-12 text-center">
                         <img src="/images/icons/icon-instagram.svg" alt="icono de regalo" width="58">
-                        <h2 class="mt-4">#BODAVEROYODA</h2>
+                        <h2 class="mt-4">#BODAVEROYOSVAL</h2>
                         <p class="m-0">¡Preparate para nuestro gran día!</p>
                         <p>Ya podés etiquetarnos en Instagram con nuestro hashtag en tus fotos o videos.</p>
-                        <a href="https://www.instagram.com/explore/tags/clubguarani" class="text-success" target="_blank">Ver fotos en instagram</a>
+                        <a href="https://www.instagram.com/explore/tags/bodaveroyosval" class="text-success" target="_blank">Ver fotos en instagram</a>
                     </div>
                 </div>
             </div>
@@ -100,8 +112,14 @@
 <script>
     import Contador from '../components/Contador';
     import Modales from '../components/Modales';
+    import NosotrosAlbum from '../components/NosotrosAlbum';
+
 
     export default {
-        components: { Contador, Modales},
+        components: { Contador, Modales, NosotrosAlbum},
     }
 </script>
+
+<style lang="scss" scoped>
+    .image{height: 200px; width: 200px; margin: 15px;}
+</style>
