@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InvitadosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/canciones', [HomeController::class, 'sugerirCanciones'])->withoutMiddleware(['auth']);
+Route::post('/buscar-invitado', [InvitadosController::class, 'buscarInvitado'])->withoutMiddleware(['auth']);
+Route::post('/confirmar-asistencia', [InvitadosController::class, 'confirmarAsistencia'])->withoutMiddleware(['auth']);
+Route::get('/invitados', [InvitadosController::class, 'getInvitados'])->withoutMiddleware(['auth']);
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+

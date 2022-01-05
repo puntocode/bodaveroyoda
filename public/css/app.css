@@ -10053,3 +10053,7 @@ h3 {
 .btn-white {
   background-color: #fff;
 }
+
+.font-bold {
+  font-weight: 900;
+}

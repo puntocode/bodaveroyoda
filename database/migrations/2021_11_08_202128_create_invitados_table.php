@@ -18,9 +18,9 @@ class CreateInvitadosTable extends Migration
             $table->uuid('codigo');
             $table->string('invitado');
             $table->integer('cantidad');
-            $table->boolean('asistencia');
-            $table->string('mensaje');
-            $table->boolean('cancelacion')->default(0);
+            $table->enum('asistencia', ['SIN RESPONDER', 'CONFIRMADA', 'NO CONFIRMADA', 'CANCELADA'])->default('SIN RESPONDER');
+            $table->string('mensaje')->nullable();
+            $table->string('numero')->nullable();
             $table->timestamps();
         });
     }

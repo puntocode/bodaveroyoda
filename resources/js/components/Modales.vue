@@ -29,16 +29,21 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3><img src="/images/icons/icon-cancion.svg" alt="icono de canciones" height="40"> Sugerí tus canciones</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button id="cerrar-cancion" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body mb-4">
-                        <form action="" class="text-center">
+                        <form @submit.prevent="sugerirCancion" class="text-center">
                             <div class="form-group text-left">
-                                <label for="">Agrega tu lista de canciones</label>
-                                <textarea name="" class="form-control" rows="10"></textarea>
+                                <label>Nombre</label>
+                                <input v-model="cancion.nombre" class="form-control">
                             </div>
 
-                            <button class="btn btn-success px-4">Enviar</button>
+                            <div class="form-group text-left">
+                                <label>Agrega tu lista de canciones</label>
+                                <textarea v-model="cancion.canciones" class="form-control" rows="8"></textarea>
+                            </div>
+
+                            <button class="btn btn-success px-4" :disabled="cancionDisable">Enviar</button>
                         </form>
                     </div>
                 </div>
@@ -52,29 +57,63 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3>Confirmá tu asistencia</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button id="cerrar-asistencia" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body mb-4">
-                        <form action="" class="text-center">
-                            <div class="form-group text-left">
-                                <label for="">Código de Invitado</label>
-                                <input type="text" class="form-control">
-                            </div>
+                        <form @submit.prevent="confirmarAsistencia" class="text-center">
 
                             <div class="form-group text-left">
-                                <label class="d-block">Asistiré</label>
-                                <label class="switchBtn">
-                                    <input v-model="asistencia.asistencia" type="checkbox">
+                                <label>Código de Invitado</label>
+                                <input class="form-control text-uppercase" v-model="asistencia.codigo">
+                                <small class="text-danger" v-if="error">Por favor ingresa un codigo válido</small>
+                                <small class="text-danger" v-if="utilizado">Este código ya ha sido utilizado.</small>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-9">
+                                    <div class="form-group text-left">
+                                        <label>Invitado/a</label>
+                                        <input class="form-control" v-model="asistencia.invitado" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="form-group text-left">
+                                        <label class="d-block">Cantidad</label>
+                                        <input class="form-control" v-model="asistencia.cantidad" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group text-left" v-if="asistencia.asistencia !== 'CANCELADA'">
+                                <label class="d-block" v-text="utilizado ? 'Queres cancelar tu invitación?' : 'Asistiré'"></label>
+
+                                <label class="switchBtn" v-if="asistencia.asistencia === 'SIN RESPONDER'">
+                                    <input v-model="asistencia.confirmar" type="checkbox" :disabled="disableAsistencia">
                                     <div class="slide round">{{ scopeText }}</div>
+                                </label>
+
+                                <label class="switchBtn" v-else>
+                                    <input v-model="asistencia.cancelar" type="checkbox" :disabled="disableAsistencia">
+                                    <div class="slide round">{{ textCancelar }}</div>
                                 </label>
                             </div>
 
-                            <div class="form-group text-left">
-                                <label for="">Algún mensaje para los Novios?</label>
-                                <textarea name="" class="form-control" rows="4"></textarea>
+
+
+                            <div class="form-group text-left" v-if="asistencia.asistencia !== 'CANCELADA'">
+                                <label v-text="utilizado ? 'Por qué deseas cancelar la invitación?' : 'Algún mensaje para los Novios?'"></label>
+                                <textarea v-model="asistencia.mensaje" class="form-control" rows="4"></textarea>
                             </div>
 
-                            <button class="btn btn-success px-4">Confirmar</button>
+                            <div class="form-group" v-if="asistencia.asistencia == 'CANCELADA'">
+                                <label class="text-danger">Tu asistencia ha sido cancelada. Comunicate con Vero para poder cambiar!</label>
+                            </div>
+
+                            <button class="btn btn-success px-4" :disabled="this.asistencia.id === 0">Confirmar</button>
                         </form>
                     </div>
                 </div>
@@ -89,15 +128,113 @@
 export default {
     data() {
         return {
-            asistencia: {codigo: '', asistencia: 'NO', mensaje: ''}
+            error: false,
+            asistencia: {id: 0, codigo: '', cantidad: '', asistencia: 'SIN RESPONDER', mensaje: '', invitado: '', confirmar: 'NO' },
+            cancion: {nombre: '', canciones: ''}
         }
     },
 
     computed: {
         scopeText() {
-            return this.asistencia.asistencia ? 'SI' : 'NO'
+            return this.asistencia.confirmar ? 'SI' : 'NO'
         },
+
+        textCancelar() {
+            return this.asistencia.cancelar ? 'SI' : 'NO'
+        },
+
+        cancionDisable(){
+            return this.cancion.canciones.trim() === '' || this.cancion.nombre.trim() === '';
+        },
+
+        disableAsistencia(){
+            return this.asistencia.invitado.trim() === '';
+        },
+
+        utilizado(){
+            return this.asistencia.asistencia !== 'SIN RESPONDER';
+        }
     },
+
+
+    methods: {
+        errorAsistencia(){
+            this.asistencia.id = 0;
+            this.asistencia.invitado = '';
+            this.asistencia.cantidad = '';
+            this.asistencia.mensaje = '';
+            this.asistencia.asistencia = 'SIN RESPONDER';
+            this.error = true;
+        },
+
+        sugerirCancion() {
+            axios.post('api/canciones', this.cancion)
+                .then(response => {
+                    if(response.status === 200) {
+                        this.alertSuccess('Muchas Gracias!', 'Agregaremos estás canciones a nuestro playlist :)', 'cerrar-cancion');
+                        this.cancion.canciones = '';
+                        this.cancion.nombre = '';
+                    }
+                });
+        },
+
+        confirmarAsistencia(){
+            let options = {
+                title: 'Confirmar Asistencia',
+                // text: 'Estas seguro que respondiste correctamente?. Si surge un imprevisto y deseas cancelar tu asistencia, lo puedes hacer utilizando el mismo Código',
+                text: 'Estas seguro que respondiste correctamente?.',
+                icon: 'info',
+                confirmButtonColor: "#5A7A62",
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'Cancelar',
+                showCancelButton: true,
+            }
+
+            this.$swal(options)
+                .then(result => {
+                    if (result.isConfirmed) this.enviarAsistencia();
+                })
+        },
+
+        enviarAsistencia(){
+            axios.post('api/confirmar-asistencia', this.asistencia)
+                .then(response => {
+                    if(response.status === 200) {
+                        this.alertSuccess('Muchas Gracias!', 'Su asistencia ha sido confirmada', 'cerrar-asistencia');
+                        this.errorAsistencia();
+                        this.asistencia.codigo = '';
+                        this.error = false;
+                    }
+                });
+        },
+
+        alertSuccess(titulo, texto, idModal){
+            let options = {
+                title: titulo,
+                text: texto,
+                icon: "success",
+                confirmButtonColor: "#5A7A62",
+            };
+
+            this.$swal(options)
+                .then(response => document.getElementById(idModal).click());
+
+        }
+    },
+
+    watch: {
+            'asistencia.codigo': function(){
+                axios.post('api/buscar-invitado',this.asistencia)
+                    .then(response =>{
+                        if(response.status === 200){
+                            this.asistencia = response.data;
+                            this.error = false;
+                        }
+                        else this.errorAsistencia();
+                    })
+                    .catch(error => this.errorAsistencia());
+            },
+        }
 };
 </script>
 

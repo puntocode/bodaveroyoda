@@ -36,7 +36,23 @@
                         <h2 class="text-success">CONFIRMAR ASISTENCIA</h2>
                         <p>Esperamos que seas parte de esta gran celebración. ¡Confirmanos tu asistencia!</p>
                         <button type="button" class="btn btn-success px-4" data-toggle="modal" data-target="#modal-asistencia">CONFIRMAR ASISTENCIA</button>
-                        <h4 class="mt-4"><span class="text-success">Dress Code:</span> Casual Chic</h4>
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <h4 class="mt-4 text-success">DRESS CODE</h4>
+                        <a
+                            href="https://www.google.com/search?q=casual+chic+hombre&tbm=isch&ved=2ahUKEwj63a69jIf1AhUBq5UCHT__CMcQ2-cCegQIABAA&oq=casual+chic+hombre&gs_lcp=CgNpbWcQAzIHCCMQ7wMQJzIGCAAQBxAeMgYIABAHEB4yBggAEAcQHlAAWABg5gJoAHAAeACAAWeIAWeSAQMwLjGYAQCqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=0FPLYfq1LIHW1sQPv_6juAw&bih=937&biw=1920&rlz=1C1SQJL_esPY863PY863"
+                            class="text-dark"
+                            target="_blank">
+                            Hombres: Casual Chic
+                        </a>
+                        <br>
+                        <a
+                            href="https://www.google.com/search?q=dress+code+cocktail+mujer&tbm=isch&ved=2ahUKEwilhaOsjYf1AhVfu5UCHTmoCR8Q2-cCegQIABAA&oq=dress+code+cocktail+&gs_lcp=CgNpbWcQARgAMgQIABBDMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgQIABAeMgQIABAeMgQIABAeOgcIIxDvAxAnOgYIABAHEB5Q4ARY4ARgyhVoAHAAeACAAXWIAccBkgEDMS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=uVTLYeXEE9_21sQPudCm-AE&bih=937&biw=1920&rlz=1C1SQJL_esPY863PY863#imgrc=JOGtI4wwefV9BM"
+                            class="text-dark"
+                            target="_blank">
+                            Mujeres: Cocktail
+                        </a>
                     </div>
                 </div>
             </div>

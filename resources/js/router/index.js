@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home'
+
+import Home from '../views/Home';
 import NotFound from '../views/NotFound'
+import Dashboard from '../views/Dashboard';
 
 Vue.use(VueRouter);
 
@@ -11,7 +13,7 @@ export default new VueRouter({
     fallback: true,
     routes: [
         {path: '/', component: Home},
-        // {path: '/about', component: AboutComponent},
+        {path: '/dashboard', component: Dashboard},
         {path: '*', component: NotFound},
     ]
 })

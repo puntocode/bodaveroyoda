@@ -7,79 +7,34 @@ use Illuminate\Http\Request;
 
 class InvitadosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function confirmarAsistencia(Request $request)
     {
-        //
+        $invitado = Invitados::findOrFail($request->id);
+
+        if($request->has('confirmar')) $invitado->asistencia = 'CONFIRMADA';
+        else  $invitado->asistencia = 'NO CONFIRMADA';
+
+        if($request->has('mensaje')) $invitado->mensaje = $request->mensaje;
+
+        if($request->has('cancelar')) $invitado->asistencia = 'CANCELADA';
+
+        $invitado->save();
+        return response()->json($invitado);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function buscarInvitado(Request $request)
     {
-        //
+        $invitado = Invitados::where('codigo', $request->codigo)->firstOrFail();
+        return response()->json($invitado);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+
+    public function getInvitados(){
+        $invitados = Invitados::all();
+        return response()->json($invitados);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Invitados  $invitados
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Invitados $invitados)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Invitados  $invitados
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Invitados $invitados)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Invitados  $invitados
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Invitados $invitados)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Invitados  $invitados
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Invitados $invitados)
-    {
-        //
-    }
 }
