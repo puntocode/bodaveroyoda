@@ -34,6 +34,11 @@ class HomeController extends Controller
         return response()->json($canciones);
     }
 
+    public function getCanciones(){
+        $canciones = Canciones::all();
+        return response()->json($canciones);
+    }
+
     public function validateData()
     {
         return request()->validate([

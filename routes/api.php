@@ -20,6 +20,7 @@ Route::post('/canciones', [HomeController::class, 'sugerirCanciones'])->withoutM
 Route::post('/buscar-invitado', [InvitadosController::class, 'buscarInvitado'])->withoutMiddleware(['auth']);
 Route::post('/confirmar-asistencia', [InvitadosController::class, 'confirmarAsistencia'])->withoutMiddleware(['auth']);
 Route::put('/confirmar-manual', [InvitadosController::class, 'confirmar'])->withoutMiddleware(['auth']);
+Route::get('/get-canciones', [HomeController::class, 'getCanciones'])->withoutMiddleware(['auth']);
 Route::get('/invitados', [InvitadosController::class, 'getInvitados'])->withoutMiddleware(['auth']);
 
 
