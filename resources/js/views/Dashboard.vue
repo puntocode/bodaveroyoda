@@ -85,7 +85,7 @@
                                 </td>
                                 <td>
                                     <span
-                                        v-show="invitado.asistencia === 'SIN RESPONDER'  || invitado.asistencia === 'CANCELADA'"
+                                        v-show="invitado.asistencia !== 'CANCELADA'"
                                         @click="confirmar(invitado.id, 'CONFIRMADA')"
                                         class="pointer text-success">
                                         Confrimar
