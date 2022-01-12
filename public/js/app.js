@@ -2580,6 +2580,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2636,7 +2656,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     invitar: function invitar(numero, codigo) {
-      var invitacion = "https://api.whatsapp.com/send?phone=".concat(numero, "&text=Estas%20invitado%2Fa%20la%20*BODA%20DE%20VERO%20%26%20OSVAL*%0APor%20favor%20confirma%20la%20asistencia%20con%20el%20siguiente%20codigo%3A%20*").concat(codigo, "*%0Alink%3A%20bodaveroyoda.com");
+      var invitacion = "https://api.whatsapp.com/send?phone=".concat(numero, "&text=Estas%20invitado%2Fa%20a%20la%20*BODA%20DE%20VERO%20%26%20OSVAL*%0APor%20favor%20confirma%20la%20asistencia%20con%20el%20siguiente%20codigo%3A%20*").concat(codigo, "*%0Alink%3A%20bodaveroyoda.com");
       console.log(invitacion);
       window.open(invitacion, '_blank');
     },
@@ -2658,6 +2678,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         'SIN RESPONDER': 'primary'
       };
       return COLOR[asistencia] || COLOR_DEFAULT;
+    },
+    confirmar: function confirmar(id, asistencia) {
+      var _this2 = this;
+
+      var titulo = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "Confirmar";
+      var options = {
+        title: titulo,
+        text: "Desea ".concat(titulo, " a este invitado?"),
+        icon: titulo === 'Confirmar' ? "info" : 'error',
+        showCancelButton: true,
+        confirmButtonColor: titulo === 'Confirmar' ? "#5A7A62" : '#e3342f',
+        confirmButtonText: "Si"
+      };
+      this.$swal(options).then(function (result) {
+        if (result.value) {
+          var data = {
+            id: id,
+            asistencia: asistencia
+          };
+          axios.put('api/confirmar-manual', data).then(function (result) {
+            _this2.alertaConfirmar(titulo);
+          });
+        }
+      });
+    },
+    alertaConfirmar: function alertaConfirmar(titulo) {
+      var tit = titulo == 'Confirmar' ? 'Confirmada' : 'Cancelada';
+      var options = {
+        title: tit,
+        text: "Asistencia ".concat(tit),
+        icon: 'success',
+        confirmButtonColor: "#5A7A62"
+      };
+      this.$swal(options).then(function (result) {
+        return location.reload();
+      });
     }
   }
 });
@@ -7462,7 +7518,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".border-5[data-v-1f79daf6] {\n  border-radius: 5px;\n}\n.pointer[data-v-1f79daf6] {\n  cursor: pointer;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".pointer[data-v-1f79daf6] {\n  cursor: pointer;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41433,20 +41489,86 @@ var render = function() {
                     _c("td", [_vm._v(_vm._s(invitado.mensaje))]),
                     _vm._v(" "),
                     _c("td", [
+                      invitado.asistencia === "SIN RESPONDER" ||
+                      invitado.asistencia === "CANCELADA"
+                        ? _c(
+                            "span",
+                            {
+                              staticClass: "btn btn-sm btn-success",
+                              on: {
+                                click: function($event) {
+                                  return _vm.invitar(
+                                    invitado.numero,
+                                    invitado.codigo
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Invitar\n                                "
+                              )
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
                       _c(
                         "span",
                         {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value:
+                                invitado.asistencia === "SIN RESPONDER" ||
+                                invitado.asistencia === "CANCELADA",
+                              expression:
+                                "invitado.asistencia === 'SIN RESPONDER'  || invitado.asistencia === 'CANCELADA'"
+                            }
+                          ],
                           staticClass: "pointer text-success",
                           on: {
                             click: function($event) {
-                              return _vm.invitar(
-                                invitado.numero,
-                                invitado.codigo
+                              return _vm.confirmar(invitado.id, "CONFIRMADA")
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                    Confrimar\n                                "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: invitado.asistencia === "CONFIRMADA",
+                              expression: "invitado.asistencia === 'CONFIRMADA'"
+                            }
+                          ],
+                          staticClass: "pointer text-danger",
+                          on: {
+                            click: function($event) {
+                              return _vm.confirmar(
+                                invitado.id,
+                                "CANCELADA",
+                                "Cancelar"
                               )
                             }
                           }
                         },
-                        [_vm._v("Invitar")]
+                        [
+                          _vm._v(
+                            "\n                                    Cancelar\n                                "
+                          )
+                        ]
                       )
                     ])
                   ])
@@ -41486,7 +41608,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Mensaje")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Invitar")])
+        _c("th", [_vm._v("Invitar")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Accion")])
       ])
     ])
   }

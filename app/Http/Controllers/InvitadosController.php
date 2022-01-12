@@ -37,4 +37,14 @@ class InvitadosController extends Controller
 
 
 
+    public function confirmar(Request $request)
+    {
+        $invitado = Invitados::findOrFail($request->id);
+        $invitado->asistencia = $request->asistencia;
+        $invitado->save();
+        return response()->json($invitado);
+    }
+
+
+
 }

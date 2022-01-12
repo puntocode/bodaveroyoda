@@ -20,7 +20,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
-            'numero' => '595994154030',
+            'numero' => '595994154030'
         ]);
 
         Invitados::create([
@@ -29,6 +29,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595972489569'
         ]);
 
         Invitados::create([
@@ -37,6 +38,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595982325189'
         ]);
 
         Invitados::create([
@@ -45,6 +47,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 4,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985602119'
         ]);
 
         Invitados::create([
@@ -53,6 +56,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985408059'
         ]);
 
         Invitados::create([
@@ -61,6 +65,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985396682'
         ]);
 
         Invitados::create([
@@ -69,6 +74,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595976593148'
         ]);
 
         Invitados::create([
@@ -77,6 +83,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985516106'
         ]);
 
         Invitados::create([
@@ -85,6 +92,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595993376248'
         ]);
 
         Invitados::create([
@@ -93,6 +101,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 4,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595994116610'
         ]);
 
         Invitados::create([
@@ -101,6 +110,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595983428466'
         ]);
 
         Invitados::create([
@@ -109,6 +119,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981172470'
         ]);
 
         Invitados::create([
@@ -117,6 +128,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595984771652'
         ]);
 
         Invitados::create([
@@ -125,6 +137,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981874045'
         ]);
 
         Invitados::create([
@@ -133,6 +146,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595991484801'
         ]);
 
         Invitados::create([
@@ -141,6 +155,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595975189695'
         ]);
 
         Invitados::create([
@@ -149,6 +164,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595984209444'
         ]);
 
         Invitados::create([
@@ -157,6 +173,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595972540846'
         ]);
 
         Invitados::create([
@@ -165,6 +182,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595992265926'
         ]);
 
         Invitados::create([
@@ -173,6 +191,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595982643295'
         ]);
 
         Invitados::create([
@@ -181,6 +200,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981436207'
         ]);
 
         Invitados::create([
@@ -189,6 +209,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595986821381'
         ]);
 
         Invitados::create([
@@ -197,6 +218,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595972167327'
         ]);
 
         Invitados::create([
@@ -205,6 +227,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595972727585'
         ]);
 
         Invitados::create([
@@ -213,6 +236,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 3,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595982807447'
         ]);
 
         Invitados::create([
@@ -221,6 +245,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595992509136'
         ]);
 
         Invitados::create([
@@ -229,6 +254,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985845141'
         ]);
 
         Invitados::create([
@@ -237,6 +263,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595991380061'
         ]);
 
         Invitados::create([
@@ -245,6 +272,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985997075'
         ]);
 
         Invitados::create([
@@ -253,6 +281,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595991303350'
         ]);
 
         Invitados::create([
@@ -261,7 +290,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
-            'numero' => '595981789843',
+            'numero' => '595981789843'
         ]);
 
         Invitados::create([
@@ -270,6 +299,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595983341677'
         ]);
 
         Invitados::create([
@@ -278,6 +308,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595961608980'
         ]);
 
         Invitados::create([
@@ -286,6 +317,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595983515999'
         ]);
 
         Invitados::create([
@@ -294,6 +326,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 3,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595992400476'
         ]);
 
         Invitados::create([
@@ -302,6 +335,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 4,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985293741'
         ]);
 
         Invitados::create([
@@ -310,6 +344,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595983917700'
         ]);
 
         Invitados::create([
@@ -318,6 +353,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595991205800'
         ]);
 
         Invitados::create([
@@ -326,6 +362,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981583258'
         ]);
 
         Invitados::create([
@@ -334,6 +371,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981583583'
         ]);
 
         Invitados::create([
@@ -342,6 +380,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595984363232'
         ]);
 
         Invitados::create([
@@ -350,6 +389,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981986518'
         ]);
 
         Invitados::create([
@@ -358,6 +398,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981520377'
         ]);
 
         Invitados::create([
@@ -366,6 +407,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '5493513449877'
         ]);
 
         Invitados::create([
@@ -374,6 +416,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '5493516286608'
         ]);
 
         Invitados::create([
@@ -382,6 +425,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '5493513887726'
         ]);
 
         Invitados::create([
@@ -390,14 +434,16 @@ class InvitadosSeed extends Seeder
             'cantidad' => 4,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '5493513420587'
         ]);
 
         Invitados::create([
             'codigo' => 'ARIME',
             'invitado' => 'Ariel Meza',
-            'cantidad' => 1,
+            'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595994707230'
         ]);
 
         Invitados::create([
@@ -406,6 +452,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595991462370'
         ]);
 
         Invitados::create([
@@ -414,6 +461,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595986393603'
         ]);
 
         Invitados::create([
@@ -422,6 +470,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595984167107'
         ]);
 
         Invitados::create([
@@ -430,6 +479,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981738754'
         ]);
 
         Invitados::create([
@@ -438,6 +488,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595991757508'
         ]);
 
         Invitados::create([
@@ -446,14 +497,16 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595986400032'
         ]);
 
         Invitados::create([
             'codigo' => 'MILDE',
             'invitado' => 'Milagros de Alza',
-            'cantidad' => 1,
+            'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '5493513774371'
         ]);
 
         Invitados::create([
@@ -462,6 +515,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '5493517574361'
         ]);
 
         Invitados::create([
@@ -470,6 +524,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981959789'
         ]);
 
         Invitados::create([
@@ -478,6 +533,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 4,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '5493515640070'
         ]);
 
         Invitados::create([
@@ -486,6 +542,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '5493584497957'
         ]);
 
         Invitados::create([
@@ -494,14 +551,16 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985761449'
         ]);
 
         Invitados::create([
             'codigo' => 'FALUS',
             'invitado' => 'Falu Santander',
-            'cantidad' => 1,
+            'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595971523300'
         ]);
 
         Invitados::create([
@@ -510,6 +569,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595982189976'
         ]);
 
         Invitados::create([
@@ -518,6 +578,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 2,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595985358885'
         ]);
 
         Invitados::create([
@@ -526,6 +587,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595982366505'
         ]);
 
         Invitados::create([
@@ -534,6 +596,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981554855'
         ]);
 
         Invitados::create([
@@ -542,6 +605,7 @@ class InvitadosSeed extends Seeder
             'cantidad' => 1,
             'asistencia' => 'SIN RESPONDER',
             'mensaje' => '',
+            'numero' => '595981325085'
         ]);
 
     }

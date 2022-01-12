@@ -50,7 +50,6 @@
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
                         <h2 class="font-bold">Lista de Invitados</h2>
-                        <!-- <button class="btn btn-success border-5">Invitar a todos</button> -->
                     </div>
 
 
@@ -63,6 +62,7 @@
                             <th class="text-center">Asistencia</th>
                             <th>Mensaje</th>
                             <th>Invitar</th>
+                            <th>Accion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,7 +76,27 @@
                                 </td>
                                 <td>{{ invitado.mensaje }}</td>
                                 <td>
-                                    <span @click="invitar(invitado.numero, invitado.codigo)" class="pointer text-success">Invitar</span>
+                                    <span
+                                        v-if="invitado.asistencia === 'SIN RESPONDER' || invitado.asistencia === 'CANCELADA'"
+                                        @click="invitar(invitado.numero, invitado.codigo)"
+                                        class="btn btn-sm btn-success">
+                                        Invitar
+                                    </span>
+                                </td>
+                                <td>
+                                    <span
+                                        v-show="invitado.asistencia === 'SIN RESPONDER'  || invitado.asistencia === 'CANCELADA'"
+                                        @click="confirmar(invitado.id, 'CONFIRMADA')"
+                                        class="pointer text-success">
+                                        Confrimar
+                                    </span>
+
+                                    <span
+                                        v-show="invitado.asistencia === 'CONFIRMADA'"
+                                        @click="confirmar(invitado.id, 'CANCELADA', 'Cancelar')"
+                                        class="pointer text-danger">
+                                        Cancelar
+                                    </span>
                                 </td>
                             </tr>
 
@@ -122,7 +142,7 @@
             },
 
             invitar(numero, codigo){
-                let invitacion = `https://api.whatsapp.com/send?phone=${numero}&text=Estas%20invitado%2Fa%20la%20*BODA%20DE%20VERO%20%26%20OSVAL*%0APor%20favor%20confirma%20la%20asistencia%20con%20el%20siguiente%20codigo%3A%20*${codigo}*%0Alink%3A%20bodaveroyoda.com`;
+                let invitacion = `https://api.whatsapp.com/send?phone=${numero}&text=Estas%20invitado%2Fa%20a%20la%20*BODA%20DE%20VERO%20%26%20OSVAL*%0APor%20favor%20confirma%20la%20asistencia%20con%20el%20siguiente%20codigo%3A%20*${codigo}*%0Alink%3A%20bodaveroyoda.com`;
                 console.log(invitacion)
 
                 window.open(invitacion, '_blank');
@@ -147,6 +167,40 @@
                 }
 
                 return COLOR[asistencia] || COLOR_DEFAULT;
+            },
+
+            confirmar(id, asistencia, titulo = "Confirmar"){
+                let options = {
+                    title: titulo,
+                    text: `Desea ${titulo} a este invitado?`,
+                    icon: titulo === 'Confirmar' ? "info" : 'error',
+                    showCancelButton: true,
+                    confirmButtonColor: titulo === 'Confirmar' ? "#5A7A62" : '#e3342f',
+                    confirmButtonText: "Si"
+                };
+
+                this.$swal(options)
+                    .then(result => {
+                        if (result.value) {
+                            let data = {id, asistencia}
+                            axios.put('api/confirmar-manual', data)
+                                .then(result => {
+                                    this.alertaConfirmar(titulo);
+                                })
+                        }
+                    });
+            },
+
+            alertaConfirmar(titulo){
+                let tit = titulo == 'Confirmar' ? 'Confirmada' : 'Cancelada';
+                let options = {
+                    title: tit,
+                    text: `Asistencia ${tit}`,
+                    icon: 'success',
+                    confirmButtonColor: "#5A7A62"
+                }
+
+                this.$swal(options).then(result => location.reload());
             }
         },
 
@@ -155,10 +209,6 @@
 </script>
 
 <style lang="scss" scoped>
-    .border-5{
-        border-radius: 5px;
-    }
-
     .pointer{
         cursor: pointer;
     }

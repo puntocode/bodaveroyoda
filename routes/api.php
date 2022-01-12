@@ -19,6 +19,7 @@ use App\Http\Controllers\InvitadosController;
 Route::post('/canciones', [HomeController::class, 'sugerirCanciones'])->withoutMiddleware(['auth']);
 Route::post('/buscar-invitado', [InvitadosController::class, 'buscarInvitado'])->withoutMiddleware(['auth']);
 Route::post('/confirmar-asistencia', [InvitadosController::class, 'confirmarAsistencia'])->withoutMiddleware(['auth']);
+Route::put('/confirmar-manual', [InvitadosController::class, 'confirmar'])->withoutMiddleware(['auth']);
 Route::get('/invitados', [InvitadosController::class, 'getInvitados'])->withoutMiddleware(['auth']);
 
 
