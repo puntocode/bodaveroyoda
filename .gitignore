@@ -18,3 +18,4 @@ yarn-error.log
 /error.log
 /request.log
 /public/js/app.js.LICENSE.txt
+requests.log
