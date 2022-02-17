@@ -28,7 +28,6 @@
     import Portada from '../components/steps/Portada';
     import Preguntas from '../components/steps/Preguntas';
     import Final from '../components/steps/Final';
-    import html2canvas from 'html2canvas';
 
 
     export default {
