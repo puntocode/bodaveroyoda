@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvitadosController;
+use App\Http\Controllers\PreguntasController;
+use App\Http\Controllers\RespuestaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,9 @@ Route::post('/confirmar-asistencia', [InvitadosController::class, 'confirmarAsis
 Route::put('/confirmar-manual', [InvitadosController::class, 'confirmar'])->withoutMiddleware(['auth']);
 Route::get('/get-canciones', [HomeController::class, 'getCanciones'])->withoutMiddleware(['auth']);
 Route::get('/invitados', [InvitadosController::class, 'getInvitados'])->withoutMiddleware(['auth']);
+Route::get('/preguntas', [PreguntasController::class, 'getPreguntas'])->withoutMiddleware(['auth']);
+Route::post('/respuestas/store', [RespuestaController::class, 'store'])->withoutMiddleware(['auth']);
+Route::get('/respuestas/resultados', [RespuestaController::class, 'getRespuestas'])->withoutMiddleware(['auth']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

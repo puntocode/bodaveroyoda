@@ -5,6 +5,8 @@ import Home from '../views/Home';
 import NotFound from '../views/NotFound'
 import Dashboard from '../views/Dashboard';
 import Canciones from '../views/Canciones';
+import Questions from '../views/Questions';
+import Resultados from '../views/Resultados';
 
 Vue.use(VueRouter);
 
@@ -16,6 +18,8 @@ export default new VueRouter({
         {path: '/', component: Home},
         {path: '/dashboard', component: Dashboard},
         {path: '/canciones', component: Canciones},
+        {path: '/jugamos', component: Questions},
+        {path: '/resultados', component: Resultados},
         {path: '*', component: NotFound},
     ]
 })
