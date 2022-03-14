@@ -5,8 +5,9 @@
         </router-link>
 
         <div>
-            <router-link to="/canciones" class="btn btn-light mr-2">Canciones</router-link>
-            <router-link to="/resultados" class="btn btn-light">Resultados</router-link>
+            <router-link to="/canciones" class="btn btn-light">Canciones</router-link>
+            <router-link to="/resultados" class="btn btn-light mx-2">Resultados</router-link>
+            <router-link to="/cargar-fotos" class="btn btn-light">Fotos</router-link>
         </div>
     </nav>
 </template>

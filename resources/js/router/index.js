@@ -7,6 +7,7 @@ import Dashboard from '../views/Dashboard';
 import Canciones from '../views/Canciones';
 import Questions from '../views/Questions';
 import Resultados from '../views/Resultados';
+import CargarFotos from '../views/CargarFotos';
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,7 @@ export default new VueRouter({
         {path: '/canciones', component: Canciones},
         {path: '/jugamos', component: Questions},
         {path: '/resultados', component: Resultados},
+        {path: '/cargar-fotos', component: CargarFotos},
         {path: '*', component: NotFound},
     ]
 })

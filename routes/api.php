@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FotoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -27,6 +28,11 @@ Route::get('/invitados', [InvitadosController::class, 'getInvitados'])->withoutM
 Route::get('/preguntas', [PreguntasController::class, 'getPreguntas'])->withoutMiddleware(['auth']);
 Route::post('/respuestas/store', [RespuestaController::class, 'store'])->withoutMiddleware(['auth']);
 Route::get('/respuestas/resultados', [RespuestaController::class, 'getRespuestas'])->withoutMiddleware(['auth']);
+
+Route::get('/get-fotos', [FotoController::class, 'index'])->withoutMiddleware(['auth']);
+Route::post('/cargar-fotos', [FotoController::class, 'store'])->withoutMiddleware(['auth']);
+Route::delete('/del-fotos/{id}', [FotoController::class, 'destroy'])->withoutMiddleware(['auth']);
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
