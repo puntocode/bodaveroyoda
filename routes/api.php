@@ -34,7 +34,6 @@ Route::post('/cargar-fotos', [FotoController::class, 'store'])->withoutMiddlewar
 Route::delete('/del-fotos/{id}', [FotoController::class, 'destroy'])->withoutMiddleware(['auth']);
 
 
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

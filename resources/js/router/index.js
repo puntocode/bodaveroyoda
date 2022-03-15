@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '../views/Home';
+import Fotos from '../views/Fotos';
 import NotFound from '../views/NotFound'
 import Dashboard from '../views/Dashboard';
 import Canciones from '../views/Canciones';
@@ -17,9 +18,10 @@ export default new VueRouter({
     fallback: true,
     routes: [
         {path: '/', component: Home},
+        {path: '/fotos', component: Fotos},
+        {path: '/jugamos', component: Questions},
         {path: '/dashboard', component: Dashboard},
         {path: '/canciones', component: Canciones},
-        {path: '/jugamos', component: Questions},
         {path: '/resultados', component: Resultados},
         {path: '/cargar-fotos', component: CargarFotos},
         {path: '*', component: NotFound},

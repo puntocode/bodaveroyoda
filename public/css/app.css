@@ -10057,3 +10057,7 @@ h3 {
 .font-bold {
   font-weight: 900;
 }
+
+.svg-invert {
+  filter: invert(100%);
+}

@@ -8,8 +8,10 @@
             <div class="container py-5">
                 <div class="row">
                     <div class="col-12 text-center text-white">
-                        <h3>Faltan</h3>
-                        <Contador :year="2022" :month="2" :day="26" :hour="19" :minute="0" />
+                        <img src="/images/icons/icon-galery.svg" class="svg-invert" alt="icono de foto" width="65">
+                        <h2 class="mt-2">Galería de Fotos</h2>
+                        <router-link to="/fotos" class="text-white">Ver</router-link>
+                        <!-- <Contador :year="2022" :month="2" :day="26" :hour="19" :minute="0" /> -->
                     </div>
                 </div>
             </div>
